@@ -7,14 +7,12 @@ pipeline {
                 stage('Profile Structural Check') {
                     steps {
                         echo 'Triggering automated student data structure audit...'
-                        // Changed from bat to sh for Linux compatibility
                         sh 'python3 student_check.py'
                     }
                 }
                 stage('Academic Formula Audit') {
                     steps {
                         echo 'Triggering automated score system formula validation...'
-                        // Changed from bat to sh for Linux compatibility
                         sh 'python3 academic_check.py'
                     }
                 }
