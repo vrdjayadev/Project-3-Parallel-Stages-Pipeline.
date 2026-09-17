@@ -7,15 +7,15 @@ pipeline {
                 stage('Profile Structural Check') {
                     steps {
                         echo 'Triggering automated student data structure audit...'
-                        // Executes Task A on the Windows Agent platform
-                        bat 'python student_check.py'
+                        // Changed from bat to sh for Linux compatibility
+                        sh 'python3 student_check.py'
                     }
                 }
                 stage('Academic Formula Audit') {
                     steps {
                         echo 'Triggering automated score system formula validation...'
-                        // Executes Task B on the Windows Agent platform
-                        bat 'python academic_check.py'
+                        // Changed from bat to sh for Linux compatibility
+                        sh 'python3 academic_check.py'
                     }
                 }
             }
